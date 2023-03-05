@@ -24,6 +24,7 @@ namespace Platformer
         public class SpriteSequence
         {
             public AnimState Track;
+            public float _speed;
             public List<Sprite> Sprites = new List<Sprite>();
         }
 

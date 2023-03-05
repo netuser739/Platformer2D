@@ -45,12 +45,12 @@ namespace Platformer
             _config = config;
         }
 
-        public void StartAnimation(SpriteRenderer spriteRenderer, AnimState track, bool loop, float speed)
+        public void StartAnimation(SpriteRenderer spriteRenderer, AnimState track, bool loop)
         {
             if(_activeAnimations.TryGetValue(spriteRenderer, out var animation))
             {
                 animation.Loop = loop;
-                animation.Speed = speed;
+                animation.Speed = _config.Sequence.Find(sequence => sequence.Track == track)._speed;
                 animation.Sleep = false;
 
                 if(animation.Track != track)
@@ -67,7 +67,7 @@ namespace Platformer
                     Track = track,
                     Sprites = _config.Sequence.Find(sequence => sequence.Track == track).Sprites,
                     Loop = loop,
-                    Speed = speed
+                    Speed = _config.Sequence.Find(sequence => sequence.Track == track)._speed
                 });
             }
         }
