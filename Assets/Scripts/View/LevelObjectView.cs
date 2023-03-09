@@ -17,10 +17,10 @@ namespace Platformer
 
         private void Awake()
         {
-            //_transform = transform;
-            //if(!TryGetComponent<SpriteRenderer>(out _spriteRenderer)) Debug.Log("Not Component SpriteRenderer");
-            //if(!TryGetComponent<Rigidbody2D>(out _rb)) Debug.Log("Not Component Rigidbody2D"); ;
-            //if(!TryGetComponent<Collider2D>(out _collider)) Debug.Log("Not Component Collider2D"); ;
+            _transform = transform;
+            if(!TryGetComponent<SpriteRenderer>(out _spriteRenderer)) Debug.Log("Not Component SpriteRenderer");
+            if(!TryGetComponent<Rigidbody2D>(out _rb)) Debug.Log("Not Component Rigidbody2D"); ;
+            if(!TryGetComponent<Collider2D>(out _collider)) Debug.Log("Not Component Collider2D"); ;
         }
     }
 }
